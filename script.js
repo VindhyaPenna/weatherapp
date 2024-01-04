@@ -58,7 +58,6 @@ async function fetchData(cityName) {
     }
 
     const data = await response.json();
-<<<<<<< HEAD
     console.log(data);
     const formattedData = formatData(data, cityName);
     return formattedData;
@@ -129,54 +128,3 @@ form.addEventListener("submit", (event) => {
     alert("Enter a city name Please!!");
   }
 });
-=======
-    console.log('Weather Data:', data);
-
-    const cityName = data.name;
-    const weatherConditions = data.weather.map(weather => weather.description).join(', ');
-    const temperature = data.main.temp;
-    const countryCode = data.sys.country;
-    const H = data.coord.lat;
-    const L = data.coord.lon;
-    const iconCode = data.weather[0].icon;
-    // console.log(iconCode)
-
-    cityData.push({
-      city: cityName,
-      temperature,
-      countryCode,
-      H,
-      L,
-      weatherConditions,
-      iconCode,
-    });
-
-    cityData.sort((a, b) => (a.temperature)-(b.temperature));
-    // cityData.sort((a, b) => a["temperature"] - b["temperature"]);
-
-    const weatherBox = document.querySelector(".weather-box");
-    weatherBox.innerHTML = '';
-
-    cityData.forEach(city => {
-        const iconUrl = `https://openweathermap.org/img/wn/${city.iconCode}.png`;
-      weatherBox.innerHTML += `<div class="weather">
-        <div class="box1">
-          <h1 class="degree">${city.temperature}&deg;</h1>
-          <img src="${iconUrl}" alt="weather">
-        </div>
-        <span class="temperature">H:${city.H}° L:${city.L}°</span>
-        <div class="location-1">
-          <p>${city.city}, ${city.countryCode}</p>
-          <p>${city.weatherConditions}</p>
-        </div>
-      </div>`;
-    });
-
-    document.querySelector(".cityname").value = '';
-  } catch (error) {
-    
-      alert("Please check the city name");
-    console.error('Error fetching weather data:', error);
-  }
-}
->>>>>>> 2f1111a53288b7fdcbcadbcbe6d12df49cdd32e9
