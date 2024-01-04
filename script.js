@@ -58,7 +58,7 @@ async function fetchData(cityName) {
     }
 
     const data = await response.json();
-    console.log(data);
+    // console.log(data);
     const formattedData = formatData(data, cityName);
     return formattedData;
   } catch (error) {
