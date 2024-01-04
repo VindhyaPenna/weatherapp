@@ -33,7 +33,7 @@ async function fetchText() {
       iconCode,
     });
 
-    cityData.sort((a, b) => a.temperature.localeCompare(b.temperature));
+    cityData.sort((a, b) => Math.floor(a.temperature)-Math.floor(b.temperature));
     // cityData.sort((a, b) => a["temperature"] - b["temperature"]);
 
     const weatherBox = document.querySelector(".weather-box");
