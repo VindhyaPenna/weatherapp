@@ -56,8 +56,8 @@ async function fetchText() {
 
     document.querySelector(".cityname").value = '';
   } catch (error) {
-    if(response=="")
-      alert("please enter the city name");
+    
+      alert("Please check the city name");
     console.error('Error fetching weather data:', error);
   }
 }
